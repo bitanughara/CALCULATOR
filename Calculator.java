@@ -1,54 +1,146 @@
 import java.util.*;
 public class Calculator{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
         int a,b;
-        int i;
         int choice;
         do{
-            System.out.println("==== CALCULATOR ====");
-            System.out.print("Enter the value of a :");
-            a = sc.nextInt();
-            System.out.print("Enter the value of b :");
-            b = sc.nextInt();
-            System.out.println("Operators :");
+            System.out.println("\n--------------------------");
+            System.out.println("        Calculator");
+            System.out.println("--------------------------");
+            System.out.println("Operators :-\n");
             System.out.println("1. Addition");
             System.out.println("2. Substraction");
             System.out.println("3. Multuplication");
             System.out.println("4. Division");
             System.out.println("5. Remainder");
-            System.out.print("You Choice :"); 
+            System.out.println("6. Factorial");
+            System.out.println("7. Power");
+            System.out.println("8. Squre");
+            System.out.println("9. Squre Root");
+            System.out.println("10. Avarage");
+            System.out.println("11. Max of Two Number");
+            System.out.println("12. Exit");
+            System.out.print("\nYour Choice (1-12) : "); 
             choice = sc.nextInt();
+            System.out.println();
             switch(choice){
-            case 1:System.out.println("Addition ="+" "+(a+b));
-            break;
-            case 2:System.out.println("Substraction ="+" "+(a-b));
-            break;
-            case 3:System.out.println("Multiplication ="+" "+(a*b));
-            break;
-            case 4:
-                if(b==0){
-                System.out.println("Undefined");
-            }
-                else{
-                System.out.println("Division ="+" "+((double)a / b));
-            }
-            break;
-            case 5:
-                if(b==0){
-                    System.out.println("Undefined");
-                }
-                else{
-                    System.out.println("Remainder ="+" "+(a % b));
-                }
+                case 1:
+                    System.out.print("Enter the value of a :");
+                    a = sc.nextInt();
+                    System.out.print("Enter the value of b :");
+                    b = sc.nextInt();
+                    System.out.println("\nAddition = "+(a+b));
+                    break;
+                case 2:
+                    System.out.print("Enter the value of a :");
+                    a = sc.nextInt();
+                    System.out.print("Enter the value of b :");
+                    b = sc.nextInt();
+                    System.out.println("\nSubtraction = "+(a-b));
+                    break;
+                case 3:
+                    System.out.print("Enter the value of a :");
+                    a = sc.nextInt();
+                    System.out.print("Enter the value of b :");
+                    b = sc.nextInt();
+                    System.out.println("\nMultiplication = "+(a*b));
+                    break;
+                case 4:
+                    System.out.print("Enter the value of a :");
+                    a = sc.nextInt();
+                    System.out.print("Enter the value of b :");
+                    b = sc.nextInt();
+                    if(b==0){
+                        System.out.println("\nUndefined");
+                    }
+                    else{
+                        System.out.println("\nDivision ="+" "+((double)a / b));
+                    }
+                    break;
+                case 5:
+                    System.out.print("Enter the value of a :");
+                    a = sc.nextInt();
+                    System.out.print("Enter the value of b :");
+                    b = sc.nextInt();
+                    if(b==0){
+                        System.out.println("\nUndefined");
+                    }
+                    else{
+                        System.out.println("\nRemainder ="+" "+(a % b));
+                    }
+                    break;
+                case 6:
+                    System.out.print("Enter value for Factorial : ");
+                    int n=sc.nextInt();
+                    int fact=1;
+                    for(int i=1;i<=n;i++){
+                        fact*= i;
+                    }
+                    System.out.println("\nFactorial = "+fact);
+                    break;
+                case 7:
+                    System.out.print("Enter the Base :");
+                    int base=sc.nextInt();
+                    System.out.print("Enter the Power :");
+                    int power=sc.nextInt();
+                    int result=1;
+                    if(power >= 0){
+                        for(int i = 1; i <= power; i++){
+                            result *= base;
+                        }
+                        System.out.println("\nResult = " + result);
+                    }
+                    else{
+                        System.out.println("\nPower cannot be Negative!");
+                    }
+                    break;
+                case 8:
+                    System.out.print("Enter the value for Square :");
+                    double square=sc.nextDouble();
+                    System.out.print("\nSquare = "+(square*square));
+                    break;
+                case 9:
+                    System.out.print("Enter the value for Squre Root :");
+                    double squrtValue=sc.nextDouble();
+                    if(squrtValue>=0){
+                        System.out.println("\nSquare Root = "+Math.sqrt(squrtValue));
+                    }
+                    else{
+                        System.out.println("\nInvalid Input !");
+                    }
+                    break;
+                case 10:
+                    System.out.print("Enter the value a for Average :");
+                    a=sc.nextInt();
+                    System.out.print("Enter the value b for Average :");
+                    b=sc.nextInt();
+                    double avg=(a+b)/2.0;
+                    System.out.print("\nAverage = "+avg);
+                    break;
+                case 11:
+                    System.out.print("Enter the value of a :");
+                    a = sc.nextInt();
+                    System.out.print("Enter the value of b :");
+                    b = sc.nextInt();
+                    if(a>b){
+                        System.out.println("\n"+a+" is greater");
+                    }
+                    else if(a==b){
+                        System.out.println("\n"+a+" == "+b+" (Equal)");
+                    }
+                    else{
+                        System.out.println("\n"+b+" is greater");
+                    }
+                    break;
+                case 12:
+                    System.out.println("\n Thank You..!");
+                    break;
+                default:System.out.println("\nInvalid Choice !");
                 break;
-                default:System.out.println("Invalid Choice");
-                break;
             }
-            System.out.print("Enter 1 to continue, any other number to exit :");
-            i = sc.nextInt();
         }
-        while(i==1);
+        while(choice!=12);
         sc.close();
     }
 }
