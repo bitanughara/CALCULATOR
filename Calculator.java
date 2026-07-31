@@ -1,5 +1,5 @@
 import java.util.*;
-public class Calculator{
+public class Calculator {
     public static void main(String args[]){
         Scanner sc=new Scanner(System.in);
         int a,b;
@@ -73,11 +73,16 @@ public class Calculator{
                 case 6:
                     System.out.print("Enter value for Factorial : ");
                     int n=sc.nextInt();
-                    int fact=1;
-                    for(int i=1;i<=n;i++){
-                        fact*= i;
+                    if(n < 0){
+                        System.out.println("\nFactorial of negative number is not possible!");
                     }
-                    System.out.println("\nFactorial = "+fact);
+                    else{
+                        int fact = 1;
+                        for(int i = 1; i <= n; i++){
+                            fact *= i;
+                        }
+                        System.out.println("\nFactorial = " + fact);
+                    }
                     break;
                 case 7:
                     System.out.print("Enter the Base :");
