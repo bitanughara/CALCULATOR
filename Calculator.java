@@ -8,20 +8,21 @@ public class Calculator {
             System.out.println("\n--------------------------");
             System.out.println("        Calculator");
             System.out.println("--------------------------");
-            System.out.println("Operators :-\n");
-            System.out.println("1. Addition");
-            System.out.println("2. Substraction");
-            System.out.println("3. Multuplication");
-            System.out.println("4. Division");
-            System.out.println("5. Remainder");
-            System.out.println("6. Factorial");
-            System.out.println("7. Power");
-            System.out.println("8. Squre");
-            System.out.println("9. Squre Root");
-            System.out.println("10. Avarage");
-            System.out.println("11. Max of Two Number");
-            System.out.println("12. Exit");
-            System.out.print("\nYour Choice (1-12) : "); 
+            System.out.println("Calculator Menu :-\n");
+            System.out.println("1. Addition.");
+            System.out.println("2. Substraction.");
+            System.out.println("3. Multuplication.");
+            System.out.println("4. Division.");
+            System.out.println("5. Remainder.");
+            System.out.println("6. Factorial.");
+            System.out.println("7. Power.");
+            System.out.println("8. Squre.");
+            System.out.println("9. Squre Root.");
+            System.out.println("10. Avarage.");
+            System.out.println("11. Find Multuplication Table.");
+            System.out.println("12. Max of Two Number.");
+            System.out.println("13. Exit.");
+            System.out.print("\nYour Choice (1-13) : "); 
             choice = sc.nextInt();
             System.out.println();
             switch(choice){
@@ -124,6 +125,20 @@ public class Calculator {
                     System.out.print("\nAverage = "+avg);
                     break;
                 case 11:
+                    System.out.println("-------------------------");
+                    System.out.println("  Multiplication Table");
+                    System.out.println("-------------------------");
+                    System.out.print("Enter the Multiplicand :");
+                    int multiplicand=sc.nextInt();
+                    System.out.println();
+                    System.out.println("Table :");
+                    System.out.println();
+                    for(int i=1;i<=10;i++){
+                        int product=multiplicand*i;
+                        System.out.println(multiplicand+" "+"*"+" "+i+" "+"="+" "+product);
+                    }
+                    break;
+                case 12:
                     System.out.print("Enter the value of a :");
                     a = sc.nextInt();
                     System.out.print("Enter the value of b :");
@@ -138,14 +153,14 @@ public class Calculator {
                         System.out.println("\n"+b+" is greater");
                     }
                     break;
-                case 12:
+                case 13:
                     System.out.println("\n Thank You..!");
                     break;
                 default:System.out.println("\nInvalid Choice !");
                 break;
             }
         }
-        while(choice!=12);
+        while(choice!=13);
         sc.close();
     }
 }
